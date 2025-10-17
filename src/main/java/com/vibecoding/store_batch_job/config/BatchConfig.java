@@ -37,7 +37,7 @@ public class BatchConfig {
     @Bean
     public ItemProcessor<Store, Store> processor() {
         return store -> {
-            if ("active".equals(store.getStatus()) && "Texas".equals(store.getState())) {
+            if ("active".equals(store.getStatus()) && store.getState().trim().equals("Texas")) {
                 return store;
             }
             return null; // Filter out stores that don't match the criteria
@@ -60,7 +60,8 @@ public class BatchConfig {
                                         store.getStatus(),
                                         store.getState(),
                                         store.getOpenDate(),
-                                        store.getCloseDate()
+                                        store.getCloseDate(),
+                                        store.getEvent()
                                 };
                             }
                         });

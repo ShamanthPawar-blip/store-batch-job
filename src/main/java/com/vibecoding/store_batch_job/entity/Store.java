@@ -16,6 +16,7 @@ public class Store {
     private String state; // e.g., "Texas"
     private String openDate;
     private String closeDate;
+    private String event;
 
     // Getters and setters
     public Long getId() {
@@ -64,5 +65,12 @@ public class Store {
 
     public void setCloseDate(String closeDate) {
         this.closeDate = closeDate;
+    }
+
+    public String getEvent() {
+        return event;
+    }
+    public void setEvent(String event) {
+        this.event = event;
     }
 }
